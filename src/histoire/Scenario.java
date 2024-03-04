@@ -1,4 +1,4 @@
-package histoire;{
+package histoire;
 
 import java.util.Random;
 
