@@ -1,5 +1,7 @@
 package personnages;
 
+import personnages.Equipements.Equipement;
+
 public class Romain {
 	private String nom;
 	private int force; 
@@ -8,7 +10,7 @@ public class Romain {
 	
 	public Romain(String nom, int force) { 
 		this.nom = nom; 
-		this.force = force;
+		this.force= force;
 		assert force>0;
 		equipements= new Equipement[2];
 		
@@ -24,15 +26,20 @@ public class Romain {
 	}
 	
 	public void recevoirCoup(int forceCoup) {
+		assert force > 0;
+		int force1=force;
+
        force -= forceCoup;
        if (force > 0) { 
     	   parler("Aïe"); 
        } else {
 	       parler("J'abandonne...");
        } 
-       assert force1>force;
+       
+	    assert force1>force;
 	}
-       public void  sEquiper (Equipement equipement) {
+	
+	 public void  sEquiper (Equipement equipement) {
    		switch (nbEquipement) {
    		case 0: {
    			System.out.println("Le soldat "+nom+" s'equipe avec un "+ equipement+".");
@@ -74,4 +81,4 @@ public class Romain {
   }
 
 
-}
+

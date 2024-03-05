@@ -17,11 +17,11 @@ public class Druide {
 				+ effetPotionMin + " à " + effetPotionMax + "."); 
 	}
 	
-	public int  preparerPotion(Random random) {
+	public int  preparerPotion() {
 		Random random1 = new Random();
 		
 		do {
-			forcePotion = random1.nextInt(effetPotionMax);
+			forcePotion = random1.nextInt(effetPotionMin,effetPotionMax);
 			
 		} while (!((forcePotion > 4) && (forcePotion<11)));
 		
@@ -61,8 +61,7 @@ public class Druide {
 
     public static void main(String[] args) {
 		Druide panoramix = new Druide("Panoramix",5,10);
-		Random random1 = new Random();
-		panoramix.preparerPotion(random1);
+		panoramix.preparerPotion();
 	}
 
 

@@ -1,7 +1,5 @@
 package personnages;
 
-import java.util.Random;
-
 public class Gaulois {
 	public String nom;
 	public int force;
@@ -29,6 +27,14 @@ public class Gaulois {
 	         + romain.getNom()); 
 		romain.recevoirCoup (force / 3); 
 	}
+	
+   public void boirePotion(int forcePotion) {
+	   effetpotion = forcePotion;
+	   parler("Merci Druide, je sens que ma force est "+forcePotion+" fois décuplée");
+		
+	
+		
+	}
 
 	@Override
     public String toString() {
@@ -42,8 +48,7 @@ public class Gaulois {
 		Romain minus = new Romain("Minus",6);
 		Gaulois asterix = new Gaulois("Asterix", 8);
 		Druide panoramix = new Druide("Panoramix",5,10);
-		Random random1 = new Random();
-		int forcePotion = panoramix.preparerPotion(random1.nextInt());
+		int forcePotion = panoramix.preparerPotion();
 //	System.out.println(asterix.toString()); ca n'affiche pas le nom du nouveau gaulois !!
 		System.out.println(asterix);
 		asterix.parler("Bonjour !");
@@ -52,12 +57,9 @@ public class Gaulois {
 	}
 
 	
-		
-}
 
 	
-
- 
-
+		
+  
 
 }
